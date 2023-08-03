@@ -1,3 +1,5 @@
+import sass from "./Main.module.scss";
+
 import { FC, ReactNode } from "react";
 
 interface MainProps {
@@ -5,5 +7,5 @@ interface MainProps {
 }
 
 export const Main: FC<MainProps> = ({ children }) => (
-  <main>{children}</main>
+  <main className={sass.main}>{children}</main>
 );

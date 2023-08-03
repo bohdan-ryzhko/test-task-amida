@@ -1,0 +1,32 @@
+@import "../../sass/helper";
+
+.footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	min-height: 100px;
+	background-color: $--accent-color;
+	width: 100vw;
+}
+
+.footerInner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.socialList {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.socialLink {
+	color: #fff;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

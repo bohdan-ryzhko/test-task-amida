@@ -9,6 +9,7 @@ import { addNoScroll, removeNoScroll } from './utils';
 
 import { Slide, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { Footer } from './components/Footer/Footer';
 
 const App: FC = () => {
   const [toggleBasket, setToggleBasket] = useState<boolean>(false);
@@ -37,6 +38,7 @@ const App: FC = () => {
           toggleBasket={toggleBasket}
         />
       </Main>
+      <Footer />
       <ToastContainer
         position="top-right"
         autoClose={5000}
