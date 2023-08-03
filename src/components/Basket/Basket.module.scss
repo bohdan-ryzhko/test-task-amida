@@ -1,0 +1,56 @@
+@import "../../sass/helper";
+
+.basketBackdrop,
+.basketBackdropActive {
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 5;
+	background-color: #00000076;
+	transition: all 400ms cubic-bezier(1, 0.97, 0, 0.02);
+}
+
+.basketBackdrop {
+	transform: translateY(-100%);
+}
+
+.basketBackdropActive {
+	transform: translateY(0);
+}
+
+.basketBody,
+.basketBodyActive {
+	padding: 20px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	max-width: 400px;
+	min-width: 320px;
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	overflow-y: scroll;
+	box-shadow: 0 0 100px #5b5b5b;
+	transition: transform 600ms ease-in-out;
+	transition-delay: 400ms;
+}
+
+.basketBody {
+	transform: translateX(120%);
+}
+
+.basketBodyActive {
+	transform: translateX(0);
+}
+
+.title {
+	color: $--accent-color;
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 20px;
+}

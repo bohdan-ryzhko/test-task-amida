@@ -17,9 +17,13 @@ const basketSlice = createSlice({
   reducers: {
     addProduct(state, action) {
       state.list.push(action.payload);
+    },
+    removeProduct(state, action) {
+      const removedIndex = state.list.findIndex(product => product.id === action.payload);
+      state.list.splice(removedIndex, 1);
     }
   },
 });
 
-export const { addProduct } = basketSlice.actions;
+export const { addProduct, removeProduct } = basketSlice.actions;
 export const basketReducer = basketSlice.reducer;

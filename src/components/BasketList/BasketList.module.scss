@@ -1,0 +1,23 @@
+.basketList {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.basketProduct {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.basketImage {
+	& > img {
+		border-radius: 5px;
+	}
+}
+
+.basketInfo {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}

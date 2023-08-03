@@ -5,6 +5,8 @@ import { IProduct } from "../../interfaces";
 import { AppDispatch } from "../../types";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/basketSlice";
+import { useBasket } from "../../hooks";
+import { toast } from "react-toastify";
 
 interface ProductProps {
   product: IProduct;
@@ -14,8 +16,18 @@ export const Product: FC<ProductProps> = ({ product: { image, price, title, id }
 
   const dispatch: AppDispatch = useDispatch();
 
-  const onAddProduct = () => {
-    dispatch(addProduct({ image, price, title, id }))
+  const { basket } = useBasket();
+
+  const handleAddProduct = () => {
+    const repeateProduct = basket.list.find(product => product.id === id);
+
+    if (repeateProduct !== undefined) {
+      toast.warn(`${title} in your products`);
+      return;
+    }
+
+    dispatch(addProduct({ image, price, title, id }));
+    toast.success(`Product ${title} add success!`);
   }
 
   return (
@@ -23,10 +35,13 @@ export const Product: FC<ProductProps> = ({ product: { image, price, title, id }
       <div className={sass.productImage}>
         <img height={350} src={image} alt={title} />
       </div>
-      <h3>{title}</h3>
-      <p>{price} UAH</p>
+      <div className={sass.productDescription}>
+        <h3>{title}</h3>
+        <p>{price} UAH</p>
+      </div>
       <button
-        onClick={onAddProduct}
+        className={sass.addProduct}
+        onClick={handleAddProduct}
         type="button"
       >
         Add to basket
