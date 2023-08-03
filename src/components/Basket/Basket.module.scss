@@ -54,3 +54,19 @@
 	font-weight: 500;
 	margin-bottom: 20px;
 }
+
+.sendOrder {
+	width: 100%;
+	background-color: $--accent-color;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius: 10px;
+	transition: background-color 300ms ease;
+
+	&:hover {
+		background-color: $--accent-color__hover;
+	}
+}

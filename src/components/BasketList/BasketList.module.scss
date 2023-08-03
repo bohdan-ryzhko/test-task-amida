@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	margin-bottom: 20px;
 }
 
 .basketProduct {
@@ -20,4 +21,8 @@
 	display: flex;
 	align-items: center;
 	gap: 20px;
+}
+
+.total {
+	margin-bottom: 30px;
 }

@@ -18,31 +18,34 @@ export const BasketList: FC = () => {
   }
 
   return (
-    <ul className={sass.basketList}>
-      {
-        basket.list.map(({ image, price, title, id }) => (
-          <li
-            key={id}
-            className={sass.basketProduct}
-          >
-            <div className={sass.basketImage}>
-              <img width={50} height={50} src={image} alt={title} />
-            </div>
-            <div className={sass.basketInfo}>
-              <div>
-                <p>{title}</p>
-                <p>{price} UAH</p>
+    <>
+      <ul className={sass.basketList}>
+        {
+          basket.list.map(({ image, price, title, id }) => (
+            <li
+              key={id}
+              className={sass.basketProduct}
+            >
+              <div className={sass.basketImage}>
+                <img width={50} height={50} src={image} alt={title} />
               </div>
-              <button
-                onClick={onRemoveProduct(id)}
-                type="button"
-              >
-                <FaTrash size={20} color="#003580" />
-              </button>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+              <div className={sass.basketInfo}>
+                <div>
+                  <p>{title}</p>
+                  <p>{price} UAH</p>
+                </div>
+                <button
+                  onClick={onRemoveProduct(id)}
+                  type="button"
+                >
+                  <FaTrash size={20} color="#003580" />
+                </button>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+      <p className={sass.total}>Total: {basket.total} UAH</p>
+    </>
   )
 }
