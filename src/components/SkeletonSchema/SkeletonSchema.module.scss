@@ -1,0 +1,24 @@
+@import "../../sass/helper";
+
+.skeletonList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: space-between;
+
+	@include tablet {
+		gap: 30px;
+	}
+}
+
+.skeletonItem {
+	flex-basis: 100%;
+
+	@include tablet {
+		flex-basis: calc(50% - 20px);
+	}
+
+	@include desktop {
+		flex-basis: calc(100% / 3 - 20px);
+	}
+}

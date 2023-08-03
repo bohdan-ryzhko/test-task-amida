@@ -1,0 +1,44 @@
+@import "../../sass/helper";
+
+.header {
+	height: 100px;
+	background-color: #fff;
+	background-color: $--accent-color;
+	margin-bottom: 20px;
+}
+
+.headerInner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.title {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+
+	@include tablet {
+		font-size: 20px;
+	}
+}
+
+.basketBtn {
+	position: relative;
+
+	& > span {
+		width: 17px;
+		height: 17px;
+		font-size: 14px;
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		color: #fff;
+		background-color: tomato;
+		border-radius: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

@@ -9,15 +9,15 @@ import {
 	PERSIST,
 	PURGE,
 	REGISTER
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import { basketReducer } from "./basketSlice";
 import { productListReducer } from "./productListSlice";
 
 const persistConfig = {
-	key: 'root',
+	key: "root",
 	storage,
-	whitelist: ['basket'],
+	whitelist: ["list"],
 }
 
 const reducer = combineReducers({
