@@ -34,6 +34,10 @@ export const Basket: FC<BasketProps> = ({ setToggleBasket, toggleBasket }) => {
     dispatch(clearBasket());
   }
 
+  const onClearBasket = () => {
+    dispatch(clearBasket());
+  }
+
   return (
     <>
       <div
@@ -45,13 +49,22 @@ export const Basket: FC<BasketProps> = ({ setToggleBasket, toggleBasket }) => {
         <BasketList />
         {
           list.length > 0 &&
-          <button
-            onClick={handleSendOrder}
-            className={sass.sendOrder}
-            type="button"
-          >
-            Send order
-          </button>
+          <div className={sass.basketButtons}>
+            <button
+              onClick={onClearBasket}
+              className={sass.clearBasket}
+              type="button"
+            >
+              Clear products
+            </button>
+            <button
+              onClick={handleSendOrder}
+              className={sass.sendOrder}
+              type="button"
+            >
+              Send order
+            </button>
+          </div>
         }
       </div>
     </>
